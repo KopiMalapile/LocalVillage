@@ -30,35 +30,52 @@
             padding: 20px;
             background-color: #2980B9; /* Navbar background color */
         }
- /* Navbar container */
-        .navbar {
-            display: flex;
-            justify-content: space-between; /* Space between the boxes */
-            align-items: center; /* Align links vertically */
-            padding: 20px;
-            background-color: #2980B9; /* Navbar background color */
-        }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2980B9;
+    flex-wrap: wrap; /* Allow links to wrap on small screens */
+}
 
-        /* Style for individual links */
-        .navbar a {
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            background-color: #3498DB;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, transform 0.2s;
-            font-size: 16px;
-            flex: 1; /* Make all links take up equal width */
-            margin: 0 10px; /* Add spacing between the boxes */
-        }
+.navbar a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #3498DB;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 16px;
+    flex: 1;
+    margin: 10px;
+    min-width: 120px; /* Prevent links from becoming too narrow */
+}
 
-        /* Hover effect for links */
-        .navbar a:hover {
-            background-color: #1B4F72;
-            transform: scale(1.05); /* Slight zoom effect */
-        }
+.navbar a:hover {
+    background-color: #1B4F72;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+    }
+    .navbar a {
+        flex: 1 1 calc(45% - 20px);
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar a {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+}
+
 /* Container for cards and charts */
 .container {
     display: flex;
