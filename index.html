@@ -15,6 +15,7 @@
     padding: 0;
     background-color: #f4f4f4;
     display: flex;
+        overflow-x: hidden;
 }
 
 .sidebar {
@@ -357,6 +358,28 @@ input[type=submit]:hover, .btn:hover {
     }
 }
 
+/* Styles for mobile (default) */
+.toolbar-mobile {
+    display: block;
+    position: fixed; /* Keep the toolbar steady at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full-width toolbar */
+    background-color: #333; /* Example background color */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.content {
+    margin-top: 50px; /* Add space for the fixed toolbar */
+    padding: 20px;
+    font-size: 16px;
+    box-sizing: border-box; /* Prevent padding from breaking layout */
+}
+
+/* Hide mobile toolbar on larger screens */
 @media (min-width: 769px) {
     .toolbar-mobile {
         display: none;
@@ -368,8 +391,20 @@ input[type=submit]:hover, .btn:hover {
     }
 }
 
+/* Utility class for showing elements (used with JavaScript) */
 .show {
     display: block;
+    animation: fadeIn 0.3s ease-in-out; /* Optional: Smooth appearance */
+}
+
+/* Optional: Keyframes for smooth fading effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 
