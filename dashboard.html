@@ -22,18 +22,18 @@
     position: relative;
 }
 
-/* Navbar styling */
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    background-color: #2980B9;
-    padding: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+            display: flex;
+            flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+            justify-content: space-between; /* Space out links on larger screens */
+            align-items: center; /* Align links vertically */
+            padding: 20px;
+            background-color: #2980B9; /* Navbar background color */
+            gap: 10px; /* Add spacing between rows when wrapping */
+        }
 
-.navbar a {
+        /* Style for individual links */
+        .navbar a {
             text-align: center;
             text-decoration: none;
             color: white;
@@ -43,8 +43,9 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s, transform 0.2s;
             font-size: 16px;
-            flex: 1; /* Make all links take up equal width */
-            margin: 0 10px; /* Add spacing between the boxes */
+            flex: 1 1 20%; /* Responsive width: take up 20% of the row, wrap if needed */
+            min-width: 120px; /* Ensure links don’t shrink too small */
+            margin: 5px; /* Add consistent spacing around links */
         }
 
         /* Hover effect for links */
@@ -53,6 +54,23 @@
             transform: scale(1.05); /* Slight zoom effect */
         }
 
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                justify-content: center; /* Center links when wrapping */
+            }
+            .navbar a {
+                flex: 1 1 45%; /* Links take up 45% width on smaller screens */
+                font-size: 14px; /* Reduce font size for better fit */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar a {
+                flex: 1 1 100%; /* Links take up full width on very small screens */
+                font-size: 14px; /* Keep text readable */
+            }
+        }
 
 /* Container for cards and charts */
 .container {
