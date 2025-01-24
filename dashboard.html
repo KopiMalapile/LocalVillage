@@ -33,18 +33,7 @@
     z-index: 1000;
 }
 
-.navbar {
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            justify-content: center; /* Center the boxes */
-            gap: 15px; /* Spacing between boxes */
-            padding: 20px;
-            background-color: #2980B9; /* Navbar background color */
-        }
-
-        /* Style for individual links */
-        .navbar a {
-            display: block;
+.navbar a {
             text-align: center;
             text-decoration: none;
             color: white;
@@ -54,7 +43,8 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s, transform 0.2s;
             font-size: 16px;
-            width: 200px; /* Set width for all boxes */
+            flex: 1; /* Make all links take up equal width */
+            margin: 0 10px; /* Add spacing between the boxes */
         }
 
         /* Hover effect for links */
@@ -62,6 +52,7 @@
             background-color: #1B4F72;
             transform: scale(1.05); /* Slight zoom effect */
         }
+
 
 /* Container for cards and charts */
 .container {
