@@ -55,17 +55,18 @@
 
 .header .top-right {
     position: absolute;
+    
     top: 20px;
     right: 20px;
-        flex-wrap: wrap;
     display: flex;
-    align-items: center;
+
     gap: 10px;
 }
 
 .header .top-right a, .header .top-right button {
     color: white;
     text-decoration: none;
+    font-size: 14px;
     padding: 10px;
     background-color: #3498DB;
     border-radius: 5px;
@@ -283,7 +284,7 @@ input[type=submit]:hover, .btn:hover {
 .notification-bubble {
     position: absolute;
     top: -5px;
-    right: -10px;
+    right: -20px;
     background-color: #f24d4d;
     color: white;
     font-size: 14px;
@@ -345,11 +346,19 @@ input[type=submit]:hover, .btn:hover {
     }
 
 
+    .header {
+        padding: 20px; /* Keep the padding consistent */
+    }
 
     .header .top-right {
-        flex-direction: column;
-        gap: 5px;
+        top: 0.3rem; /* Move the buttons farther down */
     }
+
+    .header .top-right a, .header .top-right button {
+        font-size: 12px; /* Reduce font size for buttons */
+        padding: 8px 12px; /* Adjust padding for smaller screens */
+    }
+
 
     .content {
         margin-top: 60px;
