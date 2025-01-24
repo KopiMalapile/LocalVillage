@@ -33,18 +33,35 @@
     z-index: 1000;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    background-color: #3498DB;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
+.navbar {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: center; /* Center the boxes */
+            gap: 15px; /* Spacing between boxes */
+            padding: 20px;
+            background-color: #2980B9; /* Navbar background color */
+        }
 
-.navbar a:hover {
-    background-color: #1B4F72;
-}
+        /* Style for individual links */
+        .navbar a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: #3498DB;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+            font-size: 16px;
+            width: 200px; /* Set width for all boxes */
+        }
+
+        /* Hover effect for links */
+        .navbar a:hover {
+            background-color: #1B4F72;
+            transform: scale(1.05); /* Slight zoom effect */
+        }
 
 /* Container for cards and charts */
 .container {
