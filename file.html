@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Storage</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* General Reset */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #2E86C1;
+            color: white;
+            width: 220px;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            display: block;
+            border-radius: 5px;
+            background-color: #3498DB;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background-color: #1B4F72;
+        }
+
+        /* Mobile Sidebar Toggle */
+        .sidebar.hidden {
+            transform: translateX(-100%);
+        }
+
+        .toggle-button {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #2E86C1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        /* Header */
+        .header {
+            background-color: #2980B9;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-left: 220px;
+        }
+
+        /* Responsive Content */
+        .content {
+            flex: 1;
+            margin-left: 220px;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .content.responsive {
+            margin-left: 0;
+        }
+
+        /* Container and Departments */
+        .container {
+            margin-top: 20px;
+        }
+
+        .department {
+            margin-bottom: 30px;
+        }
+
+        .department h2 {
+            margin-bottom: 10px;
+        }
+
+        .file-item {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .file-actions {
+            margin-top: 10px;
+        }
+
+        .button {
+            background-color: #3498DB;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .button:hover {
+            background-color: #1B4F72;
+        }
+
+        input[type=file] {
+            margin-top: 10px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .toggle-button {
+                display: block;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+                position: fixed;
+                height: 100%;
+            }
+
+            .sidebar.visible {
+                transform: translateX(0);
+            }
+
+            .header {
+                margin-left: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <button class="toggle-button" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar" id="sidebar">
+        <h2>Local Village</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="crm.html">CRM</a>
+        <a href="erp.html">ERP</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="file.html">File Storage</a>
+        <a href="trade-alliance.africa">Ecommerce</a>
+        <a href="logout.html">Logout</a>
+    </div>
+
+    <!-- Content -->
+    <div class="content" id="content">
+        <div class="header">
+            <h1>File Storage</h1>
+            <p>Manage your company files by department.</p>
+        </div>
+
+        <div class="container">
+            <!-- HR Department -->
+            <div class="department">
+                <h2>HR Department</h2>
+                <div class="file-item">
+                    <span>Employee Handbook.pdf</span>
+                    <div class="file-actions">
+                        <button class="button">Edit</button>
+                        <button class="button">Delete</button>
+                    </div>
+                </div>
+                <div class="file-item">
+                    <span>Recruitment Policy.docx</span>
+                    <div class="file-actions">
+                        <button class="button">Edit</button>
+                        <button class="button">Delete</button>
+                    </div>
+                </div>
+                <input type="file" id="hrUpload" accept=".pdf,.docx,.xlsx" />
+                <button class="button">Upload File</button>
+            </div>
+
+            <!-- Finance Department -->
+            <div class="department">
+                <h2>Finance Department</h2>
+                <div class="file-item">
+                    <span>Annual Budget.xlsx</span>
+                    <div class="file-actions">
+                        <button class="button">Edit</button>
+                        <button class="button">Delete</button>
+                    </div>
+                </div>
+                <div class="file-item">
+                    <span>Expense Report.pdf</span>
+                    <div class="file-actions">
+                        <button class="button">Edit</button>
+                        <button class="button">Delete</button>
+                    </div>
+                </div>
+                <input type="file" id="financeUpload" accept=".pdf,.docx,.xlsx" />
+                <button class="button">Upload File</button>
+            </div>
+
+            <!-- IT Department -->
+            <div class="department">
+                <h2>IT Department</h2>
+                <div class="file-item">
+                    <span>Network Security Guidelines.docx</span>
+                    <div class="file-actions">
+                        <button class="button">Edit</button>
+                        <button class="button">Delete</button>
+                    </div>
+                </div>
+                <div class="file-item">
+                    <span>Software Installation Procedures.pdf</span>
+                    <div class="file-actions">
+                        <button class="button">Edit</button>
+                        <button class="button">Delete</button>
+                    </div>
+                </div>
+                <input type="file" id="itUpload" accept=".pdf,.docx,.xlsx" />
+                <button class="button">Upload File</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const content = document.getElementById("content");
+            sidebar.classList.toggle("visible");
+            content.classList.toggle("responsive");
+        }
+    </script>
+
+</body>
+</html>
