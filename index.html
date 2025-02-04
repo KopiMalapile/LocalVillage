@@ -7,26 +7,46 @@
 
     
     <title>TekSA - Business Management Platform</title>
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="">
 <style>
    body {
     font-family: Arial, sans-serif;
     margin: 0;
-    box-sizing: border-box;
     padding: 0;
-  background-image: url('website-background-21.jpg');
-  background-repeat: no-repeat;
-  background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center; /* Centers the image */
-
+    box-sizing: border-box;
+    height: 100vh; /* Ensures it covers full height */
+    background: url('wp3519537.webp') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
 }
+
+body {
+    display: flex;
+    flex-direction: row; /* Ensures sidebar and content are aligned properly */
+    align-items: flex-start; /* Moves content to the top */
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+.content {
+    flex: 1;
+    padding: 0px; /* Ensure no padding adds space */
+    margin: 0;
+}
+
+.header {
+    padding: 15px;
+    margin: 0;
+    position: relative;
+}
+
 
 *{
     box-sizing: inherit;
 }
 .sidebar {
-    background-color: #2E86C1;
+    background-color: #0c5c19;
     color: white;
     width: 220px;
     min-height: 100vh;
@@ -38,22 +58,22 @@
 }
 
 .sidebar a {
-    color: white;
+    color: rgb(231, 245, 232);
     text-decoration: none;
     padding: 15px;
     margin: 5px 0;
     display: block;
     border-radius: 10px;
-    background-color: #3498DB;
+    background-color: #40aa49;
     text-align: center;
 }
 
 .sidebar a:hover {
-    background-color: #1B4F72;
+    background-color: #0d0d0e;
 }
 
 .header {
-    background-color: #2980B9;
+    background-color: rgba(255, 255, 255, 0.4);
     color: white;
     padding: 20px;
     text-align: center;
@@ -63,11 +83,9 @@
 
 .header .top-right {
     position: absolute;
-    
     top: 20px;
     right: 20px;
     display: flex;
-
     gap: 10px;
 }
 
@@ -76,27 +94,28 @@
     text-decoration: none;
     font-size: 14px;
     padding: 10px;
-    background-color: #3498DB;
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 5px;
     border: none;
     cursor: pointer;
 }
 
 .header .top-right a:hover, .header .top-right button:hover {
-    background-color: #1B4F72;
+    background-color: rgba(27, 79, 114, 0.8);
 }
+
 
 .navbar {
     display: flex;
     justify-content: space-around;
-    background-color: #2980B9;
+    background-color: #2b8f51;
     padding: 10px;
 }
 
 .card {
-    background-color: white;
+    background-color: rgba(124, 182, 132, 0.4);
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     max-width: 100%;
     word-wrap: break-word;
@@ -108,8 +127,9 @@
 }
 
 .card h3 {
-    color: #2980B9;
+    color: rgba(244, 249, 252, 0.8);
 }
+
 
 table {
     width: 100%;
@@ -127,7 +147,7 @@ th, td {
 }
 
 th {
-    background-color: #3498DB;
+    background-color: #1c8051;
     color: white;
 }
 
@@ -136,7 +156,7 @@ tr:nth-child(even) {
 }
 
 .btn {
-    background-color: #2980B9;
+    background-color: #22c91d;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -146,7 +166,7 @@ tr:nth-child(even) {
 }
 
 .btn:hover {
-    background-color: #1B4F72;
+    background-color: #118860;
 }
 
 input[type=text], input[type=email], select {
@@ -158,7 +178,7 @@ input[type=text], input[type=email], select {
 }
 
 input[type=submit], .btn {
-    background-color: #2980B9;
+    background-color: #29b948;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -167,14 +187,14 @@ input[type=submit], .btn {
 }
 
 input[type=submit]:hover, .btn:hover {
-    background-color: #1B4F72;
+    background-color: #10bd1e;
 }
 
 .chat-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #2980B9;
+    background-color: #29b941;
     color: white;
     border: none;
     padding: 15px;
@@ -184,7 +204,7 @@ input[type=submit]:hover, .btn:hover {
 }
 
 .chat-button:hover {
-    background-color: #1B4F72;
+    background-color: #e0e6eb;
 }
 
 .chat-window {
@@ -193,14 +213,14 @@ input[type=submit]:hover, .btn:hover {
     bottom: 80px;
     right: 20px;
     width: 300px;
-    background-color: white;
+    background-color: rgb(6, 129, 16);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 20px;
 }
 
 .chat-window header {
-    background-color: #2980B9;
+    background-color: #35b929;
     color: white;
     padding: 10px;
     border-radius: 10px 10px 0 0;
@@ -225,13 +245,12 @@ input[type=submit]:hover, .btn:hover {
     flex: 1;
     min-width: 300px;
 }
-
 .invite-btn {
     color: white;
     text-decoration: none;
     margin: 0 10px;
     padding: 10px;
-    background-color: #3498DB;
+    background-color: #022e09;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -271,7 +290,7 @@ input[type=submit]:hover, .btn:hover {
 
 .dropdown-content .invite-action {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #0f421b;
     color: white;
     border: none;
     border-radius: 5px;
@@ -310,7 +329,7 @@ input[type=submit]:hover, .btn:hover {
     position: absolute;
     top: 30px;
     right: 20px;
-    background-color: #00c4cc;
+    background-color: #09a866;
     border-radius: 8px;
     padding: 15px;
     width: 200px;
@@ -395,22 +414,119 @@ input[type=submit]:hover, .btn:hover {
     display: block;
 }
 
+.toolbar-mobile {
+    display: none; /* Hidden by default */
+}
+
+.toolbar-mobile button {
+    background-color: #2980B9;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.toolbar-mobile button:hover {
+    background-color: #1B4F72;
+}
+
+@media (max-width: 768px) {
+    .toolbar-mobile {
+        display: block; /* Display toolbar on smaller screens */
+        margin-bottom: 10px;
+    }
+
+    .header {
+        padding: 10px; /* Adjust header padding for mobile */
+        text-align: left;
+    }
+
+    .search-container {
+        margin-top: 10px;
+    }
+}
+.header {
+    background-color: rgba(94, 228, 139, 0.7); /* Adds transparency */
+    color: white;
+    padding: 20px;
+    text-align: center; /* Centers only text */
+    position: relative; /* Allows positioning of top-right menu */
+}
+.menu-button {
+    background-color: #022e09;
+}
+   
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+.content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+@media (max-width: 768px) {
+    .toolbar-mobile {
+        display: flex; /* Ensure it is visible */
+        justify-content: flex-start; /* Align to the left */
+        position: absolute;
+        top: 10px; /* Adjust as needed */
+        left: 10px; /* Move to the left */
+        z-index: 1001; /* Ensure it stays on top */
+    }
+
+    .toolbar-mobile button {
+        background-color: #2980B9;
+        color: white;
+        border: none;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0;
+    }
+
+    .header {
+        text-align: center;
+        padding: 10px 10px 10px 50px; /* Ensure content is not blocked by the button */
+        position: relative;
+    }
+
+    @media (max-width: 768px) {
+    .header {
+        text-align: center;
+        padding: 60px 10px 20px; /* Increase top padding to push text down */
+        position: relative;
+    }
+
+    .header h1 {
+        margin-top: 30px; /* Move the welcome text further down */
+        font-size: 22px; /* Adjust size for better readability on mobile */
+    }
+
+    .header p {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .top-right {
+        position: absolute;
+        top: 10px; /* Keep login and invite at the top */
+        right: 10px;
+    }
+}
+
+}
+
 
     </style>
 </head>
 <body>
-
-    <div class="sidebar" id="mobileSidebar">
-        <h2>Local Village Africa</h2>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="crm.html">CRM</a>
-        <a href="erp.html">ERP</a>
-        <a href="inventory.html">Inventory</a>
-        <a href="file.html">File Storage</a>
-        <a href="https://localvillage.africa/shop/" target="_blank" rel="noopener noreferrer">Ecommerce</a>
-        <a href="logout.html">Logout</a>
-    </div>
-</div>
+ 
 
 <!-- Desktop Sidebar -->
 <div class="sidebar" id="desktopSidebar">
@@ -421,6 +537,9 @@ input[type=submit]:hover, .btn:hover {
     <a href="inventory.html">Inventory</a>
     <a href="file.html">File Storage</a>
     <a href="https://localvillage.africa/shop/">Ecommerce</a>
+    <a href="hr.html">HR</a>
+    <a href="developer.html">Developer</a>
+    <a href="file.html">Automation</a>
     <a href="logout.html">Logout</a>
 </div>
 
@@ -442,18 +561,35 @@ document.addEventListener('click', function (event) {
 </script>
 
     <div class="content">
-          <!-- Mobile Toolbar with Sidebar -->
-<div class="toolbar-mobile" id="toolbarMobile">
-    <button onclick="toggleToolbar()" aria-label="Toggle Menu">
-        <span class="icon">&#x22EE;</span> <!-- Vertical Ellipsis Icon -->
-    </button>
-    
         <div class="header">
+ <!-- Mobile Toolbar with Sidebar -->
+<div class="toolbar-mobile" id="toolbarMobile">
+   
+    <button class="menu-button" onclick="toggleToolbar(); toggleSidebar();">Menu</button>
+    
+    <div class="sidebar" id="mobileSidebar">
+        <h2>Local Village Africa</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="crm.html">CRM</a>
+        <a href="erp.html">ERP</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="file.html">File Storage</a>
+        <a href="https://localvillage.africa/shop/" target="_blank" rel="noopener noreferrer">Ecommerce</a>
+        <a href="hr.html">HR</a>
+        <a href="file.html">Developer</a>
+        <a href="file.html">Automation</a>
+        <a href="logout.html">Logout</a>
+    </div>
+</div>
+
+           
             <h1>Welcome to Local Village Africa</h1>
             <p>All in one Management Business platform.</p>
+          
+      
             <!-- Search Bar -->
             <div class="search-container">
-                <input type="text" id="searchTerm" placeholder="Search TekSA..." onkeypress="search(event)">
+                <input type="text" id="searchTerm" placeholder="Search..." onkeypress="search(event)">
                 <button onclick="search()">Search</button>
             </div>
             <!-- Top right section -->
@@ -640,9 +776,9 @@ document.getElementById('chatWindow').addEventListener('click', function(event) 
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: linear-gradient(135deg, #1B4F72, #2980B9); /* Gradient background */
+    background: linear-gradient(135deg, #1b7242, #29b97d); /* Gradient background */
     color: white;
-    border: 2px solid  #1B4F72;; /* Thin border with matching color */
+    border: 2px solid  #06502b;; /* Thin border with matching color */
     padding: 12px 18px;
     border-radius: 25px; /* Fully rounded corners */
     font-size: 16px;
@@ -730,6 +866,7 @@ document.getElementById('chatWindow').addEventListener('click', function(event) 
             right: 10px;
         }
     }
+
 </style>
 
 </html>
